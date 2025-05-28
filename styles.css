@@ -1,0 +1,417 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #f0f0f0;
+    background-color: #121212; /* Darker background */
+}
+
+/* Navigation */
+.nav {
+    background: #1a1a1a; /* Slightly lighter dark for nav */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #2a2a2a; /* Subtle border */
+}
+
+.nav-container {
+    max-width: 1400px; /* Wider container for premium feel */
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header {
+    text-align: left;
+}
+
+.nav-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1; /* Adjust line height for single line logo */
+}
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-contact a {
+    color: #c0c0c0; /* Light gray for contact links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.nav-contact a:hover {
+    color: #007bff; /* Accent color on hover */
+}
+
+.nav-contact span {
+    color: #444; /* Darker separator */
+}
+
+/* Main content */
+.main {
+    padding: 2.5rem 0; /* Reduced main padding */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Filter Navigation */
+.filter-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem; /* Reduced margin */
+    gap: 1rem;
+}
+
+.filter-btn {
+    font-family: 'Oswald', sans-serif;
+    background: none;
+    border: none; /* Remove border */
+    color: #777; /* Grayed out when not selected */
+    padding: 0.6rem 0.2rem; /* Adjusted padding for underline */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    position: relative; /* For underline positioning */
+    margin: 0 0.8rem; /* Horizontal margin for spacing */
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position underline below text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* White underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #fff; /* White text on hover/active */
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+    width: 100%; /* Full width underline on active or hover */
+}
+
+/* Video grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem; /* Reduced gap */
+    padding: 2rem 0;
+}
+
+.video-item {
+    background: #1e1e1e; /* Darker item background */
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #2a2a2a; /* Subtle border for items */
+    border-radius: 0; /* No rounded corners */
+}
+
+.video-item.hide {
+    display: none;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background-color: #222; /* Placeholder background color */
+}
+
+.video-thumbnail::before { /* Placeholder Icon */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23404040"><path d="M19.376 12.001c0 .086-.006.17-.017.254l-1.983.496a2.002 2.002 0 00-1.143 2.895l.868 1.827a8.008 8.008 0 01-1.302 1.302l-1.826-.867a2 2 0 00-2.895 1.142l-.496 1.984a8.002 8.002 0 01-.254.017A8.002 8.002 0 014 12.001a8.002 8.002 0 0111.073-7.471l.496 1.983a2.002 2.002 0 002.895 1.143l1.827-.868a8.008 8.008 0 011.302 1.302l-.868 1.827a2.002 2.002 0 001.143 2.895l1.983.496c.01.083.016.168.016.253zm-9.375 2.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"/><path d="M8 5v14l11-7z"/></svg>'); /* Generic Video/Play Icon (Darker Gray) */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 1; /* Below image, above background color */
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease; /* Keep opacity transition, remove transform */
+    opacity: 0.85;
+    z-index: 2; /* Above placeholder icon */
+    background-color: transparent; /* Ensure img transparency doesn't hide placeholder if image itself is transparent */
+}
+
+.video-item:hover .video-thumbnail img {
+    /* transform: scale(1.08); */ /* Removed scale animation */
+    opacity: 1;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-item:hover .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.video-item h3 {
+    display: none; /* Hide title */
+}
+
+.video-item p {
+    display: none; /* Hide description */
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker modal background */
+    backdrop-filter: blur(8px);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    background: #1e1e1e; /* Dark modal content */
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    border-radius: 0; /* No rounded corners */
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    border-radius: 0; /* No rounded corners */
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-video {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-video iframe {
+    width: 85vw; /* Adjusted iframe size */
+    height: calc(85vw * 9 / 16); /* Maintain 16:9 aspect ratio */
+    max-width: 1400px;
+    max-height: calc(1400px * 9 / 16);
+    border: none;
+}
+
+/* Responsive design */
+@media (max-width: 992px) { /* Added a new breakpoint */
+    .nav-container {
+        padding: 1rem 1.5rem; /* Adjusted padding */
+    }
+    .nav-logo {
+        font-size: 2rem; /* Adjusted font size */
+    }
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem; /* Adjusted gap */
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .nav-header {
+        margin-bottom: 0.3rem; /* Adjusted margin */
+    }
+
+    .nav-contact {
+        flex-direction: row; /* Keep contact info in a row on smaller screens for a bit */
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .filter-nav {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem; /* Reduced margin */
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .video-thumbnail {
+        /* padding-bottom: 56.25%; */ /* Already set, will inherit */
+    }
+
+    .modal-video iframe {
+        width: 90vw;
+        height: calc(90vw * 9 / 16);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0.8rem 1rem; /* Adjusted padding */
+    }
+
+    .nav-logo {
+        font-size: 1.8rem; /* Adjusted font size */
+    }
+
+    .nav-contact {
+        flex-direction: column; /* Stack contact info on very small screens */
+        gap: 0.5rem;
+    }
+
+    .nav-contact span {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .video-thumbnail {
+        /* padding-bottom: 56.25%; */ /* Already set, will inherit */
+    }
+
+    .video-item h3 {
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem 0.4rem;
+    }
+
+    .video-item p {
+        padding: 0 1.2rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .modal-video iframe {
+        width: 95vw;
+        height: calc(95vw * 9 / 16);
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.video-item:focus,
+.modal-close:focus,
+.filter-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.nav-contact a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Image loading enhancement */
+.video-thumbnail img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* More pronounced fade-in */
+}
+
+.video-thumbnail img.loaded {
+    opacity: 0.85; /* Match default opacity */
+}
+
+.video-item:hover .video-thumbnail img.loaded {
+    opacity: 1;
+} 
