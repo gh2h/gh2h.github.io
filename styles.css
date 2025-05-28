@@ -42,16 +42,16 @@ body {
     color: #f0f0f0;
     letter-spacing: 1px;
     text-transform: uppercase;
-    line-height: 1; /* Adjust line height for single line logo */
+    line-height: 10; /* Adjust line height for single line logo */
 }
 
 .nav-sublogo {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: #f0f0f0;
-    letter-spacing: 1px;
-    line-height: 10; /* Adjust line height for single line logo */
+    letter-spacing: 10px;
+    line-height: 1; /* Adjust line height for single line logo */
 }
 
 .nav-contact {
