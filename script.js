@@ -10,6 +10,39 @@ const portfolioItemsData = [
     // { id: 'VIDEO_ID', platform: 'vimeo', category: 'CATEGORY', title: 'Your Video Title' },
 ];
 
+
+
+<script>
+const accessToken = "157a5615036edce5f9ba9a0db31e19a6";
+
+async function loadPortfolioData() {
+  // Static entries (e.g. YouTube)
+  const staticData = [
+    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' },
+    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' },
+    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' }
+  ];
+
+  // Fetch Vimeo videos
+  const res = await fetch('https://api.vimeo.com/me/videos?per_page=50', {
+    headers: { Authorization: `bearer ${accessToken}` }
+  });
+  const json = await res.json();
+
+  const vimeoData = json.data.map(video => ({
+    id: video.uri.split('/').pop(),
+    platform: 'vimeo',
+    category: 'editing', // ← you can customize this logic or pull from video.tags
+    title: video.name
+  }));
+
+  // Combine them
+  window.portfolioItemsData = [...staticData, ...vimeoData];
+}
+</script>
+
+
+
 // Portfolio Video Modal
 class VideoPortfolio {
     constructor() {
