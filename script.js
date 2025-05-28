@@ -1,14 +1,49 @@
-const portfolioItemsData = [
-    { id: 'dQw4w9WgXcQ', platform: 'vimeo', category: 'editing', title: 'Editing Reel' },
-    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' }, // Example: Different YouTube video
-    { id: '383849776', platform: 'vimeo', category: 'editing', title: 'Lidl Reklama' },     // Example: Vimeo video from before
-    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' }, // Example: Another YouTube video
-    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' },    // Example: YouTube music video
-    { id: '290357608', platform: 'vimeo', category: 'films', title: 'Documentary Clip' }        // Example: Different Vimeo video
-    // Add more video objects here as needed, e.g.:
+// const portfolioItemsData = [
+//    { id: 'dQw4w9WgXcQ', platform: 'vimeo', category: 'editing', title: 'Editing Reel' },
+//    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' }, // Example: Different YouTube video
+//    { id: '383849776', platform: 'vimeo', category: 'editing', title: 'Lidl Reklama' },     // Example: Vimeo video from before
+//    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' }, // Example: Another YouTube video
+//    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' },    // Example: YouTube music video
+//    { id: '290357608', platform: 'vimeo', category: 'films', title: 'Documentary Clip' }        // Example: Different Vimeo video
+//    // Add more video objects here as needed, e.g.:
     // { id: 'VIDEO_ID', platform: 'youtube', category: 'CATEGORY', title: 'Your Video Title' },
     // { id: 'VIDEO_ID', platform: 'vimeo', category: 'CATEGORY', title: 'Your Video Title' },
-];
+//];
+
+
+<script>
+const accessToken = "157a5615036edce5f9ba9a0db31e19a6";
+
+async function loadPortfolioData() {
+  const response = await fetch('https://api.vimeo.com/me/videos?per_page=50', {
+    headers: { Authorization: `bearer ${accessToken}` }
+  });
+
+  const data = await response.json();
+
+  // Convert Vimeo data into your format
+  const vimeoVideos = data.data.map(video => ({
+    id: video.uri.split('/').pop(), // this gets just the number like '383849776'
+    platform: 'vimeo',
+    category: 'editing', // You can change this later, or use video.tags
+    title: video.name
+  }));
+
+  // Static YouTube videos you want to keep
+  const youtubeVideos = [
+    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' },
+    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' },
+    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' }
+  ];
+
+  // Combine Vimeo + YouTube
+  window.portfolioItemsData = [...youtubeVideos, ...vimeoVideos];
+}
+</script>
+
+
+
+
 
 
 
@@ -271,8 +306,15 @@ const utils = {
 };
 
 // Initialize the portfolio when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new VideoPortfolio();
+//document.addEventListener('DOMContentLoaded', () => {
+//    new VideoPortfolio();
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadPortfolioData();       // ← wait until Vimeo videos are loaded
+    new VideoPortfolio();            // ← then build the grid
+});
+
+
+    
 });
 
 // Handle window resize for responsive behavior
