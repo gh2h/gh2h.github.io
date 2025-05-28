@@ -47,11 +47,11 @@ body {
 
 .nav-sublogo {
     font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: #f0f0f0;
     letter-spacing: 1px;
-    line-height: 1; /* Adjust line height for single line logo */
+    line-height: 10; /* Adjust line height for single line logo */
 }
 
 .nav-contact {
