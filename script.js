@@ -1,5 +1,5 @@
 const portfolioItemsData = [
-    { id: 'dQw4w9WgXcQ', platform: 'youtube', category: 'editing', title: 'Editing Reel' },
+    { id: 'dQw4w9WgXcQ', platform: 'vimeo', category: 'editing', title: 'Editing Reel' },
     { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' }, // Example: Different YouTube video
     { id: '383849776', platform: 'vimeo', category: 'editing', title: 'Lidl Reklama' },     // Example: Vimeo video from before
     { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' }, // Example: Another YouTube video
