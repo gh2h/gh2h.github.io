@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vladas Litvinas - Video Editor & Colorist</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +20,10 @@
                 <h1 class="nav-sublogo">Video Editor & Colorist</h1>
             </div>
             <div class="nav-contact">
+                <a href="#work">Work</a>
+                <span>|</span>
+                <a href="#about">About</a>
+                <span>|</span>
                 <a href="mailto:litvinas.vladas@gmail.com">litvinas.vladas@gmail.com</a>
                 <span>|</span>
                 <a href="tel:+37062885088">+370 62 88 50 88</a>
@@ -28,18 +34,29 @@
     <!-- Main Content -->
     <main class="main">
         <div class="container">
-            <!-- Filter Navigation -->
-            <div class="filter-nav">
-                <button class="filter-btn active" data-filter="all">commercials</button>
-                <button class="filter-btn" data-filter="films">Films</button>
-                <!-- <button class="filter-btn" data-filter="color">Color Grading</button>
-                <button class="filter-btn" data-filter="editing">Editing</button> -->
-            </div>
+            <!-- Work Section -->
+            <section id="work">
+                <!-- Video Grid -->
+                <div class="video-grid" id="videoGrid">
+                    <!-- Video items will be dynamically populated by JavaScript -->
+                </div>
+            </section>
 
-            <!-- Video Grid -->
-            <div class="video-grid" id="videoGrid">
-                <!-- Video items will be dynamically populated by JavaScript -->
-            </div>
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="vladas.jpg" alt="Vladas Litvinas" />
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            I am a professional video editor and colorist with over a decade of experience in commercial and creative projects. 
+                            My work spans across various genres, from TV commercials and music videos to corporate content and documentaries. 
+                            I specialize in crafting compelling visual narratives through precise editing and sophisticated color grading.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -53,6 +70,10 @@
         </div>
     </div>
 
+    <!-- Initialize portfolio -->
+    <script>
+        console.log('Page loaded, initializing portfolio...');
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 

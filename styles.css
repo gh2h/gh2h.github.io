@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Add padding for sticky header */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
@@ -19,7 +24,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #2a2a2a; /* Subtle border */
+    border-bottom: 1px solid #222; /* Dimmer border */
 }
 
 .nav-container {
@@ -37,21 +42,23 @@ body {
 
 .nav-logo {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #f0f0f0;
     letter-spacing: 1px;
     text-transform: uppercase;
-    line-height: 1; /* Adjust line height for single line logo */
+    line-height: 1;
+    margin-bottom: 0.3rem;
 }
 
 .nav-sublogo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f0f0f0;
-    letter-spacing: 1px;
-    line-height: 1; /* Adjust line height for single line logo */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .nav-contact {
@@ -66,10 +73,11 @@ body {
     transition: color 0.3s ease;
     font-size: 0.9rem;
     font-weight: 400;
+    padding: 0.2rem 0;
 }
 
 .nav-contact a:hover {
-    color: #007bff; /* Accent color on hover */
+    color: #fff; /* Accent color on hover */
 }
 
 .nav-contact span {
@@ -78,7 +86,7 @@ body {
 
 /* Main content */
 .main {
-    padding: 2.5rem 0; /* Reduced main padding */
+    padding: 2.5rem 0;
 }
 
 .container {
@@ -136,8 +144,8 @@ body {
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem; /* Reduced gap */
-    padding: 2rem 0;
+    gap: 1rem;
+    padding: 0.5rem 0;
 }
 
 .video-item {
@@ -146,7 +154,7 @@ body {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    border: 1px solid #2a2a2a; /* Subtle border for items */
+    border: 1px solid #1f1f1f; /* Dimmer border for items */
     border-radius: 0; /* No rounded corners */
 }
 
@@ -248,7 +256,7 @@ body {
     max-height: 90vh;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
+    border: 1px solid #222; /* Dimmer border for modal */
     border-radius: 0; /* No rounded corners */
 }
 
@@ -289,12 +297,12 @@ body {
 }
 
 /* Responsive design */
-@media (max-width: 992px) { /* Added a new breakpoint */
-    .nav-container {
-        padding: 1rem 1.5rem; /* Adjusted padding */
-    }
+@media (max-width: 992px) {
     .nav-logo {
-        font-size: 2rem; /* Adjusted font size */
+        font-size: 2.4rem;
+    }
+    .nav-sublogo {
+        font-size: 0.9rem;
     }
     .video-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -303,15 +311,21 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav-header {
+        text-align: center;
+        margin-bottom: 0.8rem;
+    }
+    .nav-logo {
+        font-size: 2.2rem;
+    }
+    .nav-sublogo {
+        font-size: 0.85rem;
+    }
     .nav-container {
         flex-direction: column;
         gap: 0.5rem; /* Adjusted gap */
         text-align: center;
         padding: 1rem;
-    }
-
-    .nav-header {
-        margin-bottom: 0.3rem; /* Adjusted margin */
     }
 
     .nav-contact {
@@ -351,12 +365,15 @@ body {
 }
 
 @media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.8rem;
+    }
+    .nav-sublogo {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+    }
     .nav-container {
         padding: 0.8rem 1rem; /* Adjusted padding */
-    }
-
-    .nav-logo {
-        font-size: 1.8rem; /* Adjusted font size */
     }
 
     .nav-contact {
@@ -423,4 +440,97 @@ html {
 
 .video-item:hover .video-thumbnail img.loaded {
     opacity: 1;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.about-image img:hover {
+    filter: grayscale(0%);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #c0c0c0;
+    margin: 0;
+}
+
+/* Responsive styles for About section */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 2rem 0;
+    }
+
+    .about-image {
+        max-width: 200px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
+
+/* Work Section */
+#work {
+    padding-top: 0.5rem;
+    scroll-margin-top: 100px;
+}
+
+/* Video grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem 0;
 } 
