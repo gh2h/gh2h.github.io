@@ -1,3 +1,42 @@
+const portfolioItemsData = [
+    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' },
+    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' },
+    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' },
+    { id: '1088428260', platform: 'vimeo', category: 'editing', title: 'Starka' },
+    { id: '1088428189', platform: 'vimeo', category: 'editing', title: 'Lithuanian vodka Unique' },
+    { id: '1088428098', platform: 'vimeo', category: 'editing', title: 'Labas Mustang' },
+    { id: '1088426586', platform: 'vimeo', category: 'editing', title: 'Altel Robots KZ' },
+    { id: '1088418560', platform: 'vimeo', category: 'editing', title: 'Telia - I love you' },
+    { id: '1088413507', platform: 'vimeo', category: 'editing', title: 'Telia Elevator' },
+    { id: '1088411526', platform: 'vimeo', category: 'editing', title: 'Maxima' },
+    { id: '1088409265', platform: 'vimeo', category: 'editing', title: 'imperial_xii (1080p)' },
+    { id: '1088409184', platform: 'vimeo', category: 'editing', title: 'Gritė Daugiau švaros' },
+    { id: '1088405416', platform: 'vimeo', category: 'editing', title: 'Love' },
+    { id: '1088405286', platform: 'vimeo', category: 'editing', title: 'Gubernija Naked brown ale' },
+    { id: '1088403330', platform: 'vimeo', category: 'editing', title: 'Maxima Christmas' },
+    { id: '1088402051', platform: 'vimeo', category: 'editing', title: 'Amfora' },
+    { id: '1088401595', platform: 'vimeo', category: 'editing', title: 'Obeliai Family' },
+    { id: '1088401381', platform: 'vimeo', category: 'editing', title: 'Telia Christmas - Neighbours' },
+    { id: '1088401288', platform: 'vimeo', category: 'editing', title: 'Telia - 5g' },
+    { id: '1088401186', platform: 'vimeo', category: 'editing', title: 'Švyturys - Už mus, Lietuvius' },
+    { id: '932154899', platform: 'vimeo', category: 'editing', title: 'Amouage - Extrait de Amou' },
+    { id: '913318030', platform: 'vimeo', category: 'editing', title: 'Super Manki 15s' },
+    { id: '336777947', platform: 'vimeo', category: 'editing', title: 'Perskindol' },
+    { id: '323261279', platform: 'vimeo', category: 'editing', title: 'Dlight' },
+    { id: '148210664', platform: 'vimeo', category: 'editing', title: 'Scanorama' },
+    { id: '148210418', platform: 'vimeo', category: 'editing', title: 'Ežys Kiss' },
+    { id: '148210012', platform: 'vimeo', category: 'editing', title: 'Rimi Image' },
+    { id: '148209772', platform: 'vimeo', category: 'editing', title: 'Maxima_Šeimos mėnuo' },
+    { id: '148072833', platform: 'vimeo', category: 'editing', title: 'Tele2 All Calls' },
+    { id: '134650086', platform: 'vimeo', category: 'editing', title: 'Maxima Bumsiai' },
+    { id: '122527454', platform: 'vimeo', category: 'editing', title: 'Iki lojalumas' },
+    { id: '103982274', platform: 'vimeo', category: 'editing', title: 'Omnitel 4G' },
+    { id: '103418528', platform: 'vimeo', category: 'editing', title: 'IKI Ūkis' }
+    // Add more video objects here as needed, e.g.:
+    // { id: 'VIDEO_ID', platform: 'youtube', category: 'CATEGORY', title: 'Your Video Title' },
+    // { id: 'VIDEO_ID', platform: 'vimeo', category: 'CATEGORY', title: 'Your Video Title' },
+];
+
 // const portfolioItemsData = [
 //    { id: 'dQw4w9WgXcQ', platform: 'vimeo', category: 'editing', title: 'Editing Reel' },
 //    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' }, // Example: Different YouTube video
@@ -11,35 +50,35 @@
 //];
 
 
-<script>
-const accessToken = "157a5615036edce5f9ba9a0db31e19a6";
+// <script>
+// const accessToken = "157a5615036edce5f9ba9a0db31e19a6";
 
-async function loadPortfolioData() {
-  const response = await fetch('https://api.vimeo.com/me/videos?per_page=50', {
-    headers: { Authorization: `bearer ${accessToken}` }
-  });
+// async function loadPortfolioData() {
+//   const response = await fetch('https://api.vimeo.com/me/videos?per_page=50', {
+//     headers: { Authorization: `bearer ${accessToken}` }
+//   });
 
-  const data = await response.json();
+//   const data = await response.json();
 
-  // Convert Vimeo data into your format
-  const vimeoVideos = data.data.map(video => ({
-    id: video.uri.split('/').pop(), // this gets just the number like '383849776'
-    platform: 'vimeo',
-    category: 'editing', // You can change this later, or use video.tags
-    title: video.name
-  }));
+//   // Convert Vimeo data into your format
+//   const vimeoVideos = data.data.map(video => ({
+//     id: video.uri.split('/').pop(), // this gets just the number like '383849776'
+//     platform: 'vimeo',
+//     category: 'editing', // You can change this later, or use video.tags
+//     title: video.name
+//   }));
 
-  // Static YouTube videos you want to keep
-  const youtubeVideos = [
-    { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' },
-    { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' },
-    { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' }
-  ];
+//   // Static YouTube videos you want to keep
+//   const youtubeVideos = [
+//     { id: 'L_LUpnjgPso', platform: 'youtube', category: 'color', title: 'Color Grading Showcase' },
+//     { id: 'oJohn_H4j2o', platform: 'youtube', category: 'editing', title: 'Corporate Video Edit' },
+//     { id: '7gqH2XRt2cI', platform: 'youtube', category: 'color', title: 'Music Video Color' }
+//   ];
 
-  // Combine Vimeo + YouTube
-  window.portfolioItemsData = [...youtubeVideos, ...vimeoVideos];
-}
-</script>
+//   // Combine Vimeo + YouTube
+//   window.portfolioItemsData = [...youtubeVideos, ...vimeoVideos];
+// }
+// </script>
 
 
 
