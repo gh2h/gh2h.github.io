@@ -41,12 +41,11 @@ const portfolioItemsData = [
     { id: '1088401595', platform: 'vimeo', category: 'editing', title: 'Obeliai Family' },
     { id: '1088426586', platform: 'vimeo', category: 'editing', title: 'Altel Robots KZ' },
 
-   
+    { id: '103418528', platform: 'vimeo', category: 'editing', title: 'IKI Ūkis' },
     { id: '148072833', platform: 'vimeo', category: 'editing', title: 'Tele2 All Calls' },
     { id: '103982274', platform: 'vimeo', category: 'editing', title: 'Omnitel 4G' },
-    { id: '148210418', platform: 'vimeo', category: 'editing', title: 'Ežys Kiss' },
+    { id: '148210418', platform: 'vimeo', category: 'editing', title: 'Ežys Kiss' }
     //{ id: '148210664', platform: 'vimeo', category: 'editing', title: 'Scanorama' },
-    { id: '103418528', platform: 'vimeo', category: 'editing', title: 'IKI Ūkis' }
 ];
 
 console.log('Portfolio data loaded:', portfolioItemsData.length, 'items');

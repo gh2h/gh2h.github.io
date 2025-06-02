@@ -175,21 +175,6 @@ body {
     background-color: #222; /* Placeholder background color */
 }
 
-.video-thumbnail::before { /* Placeholder Icon */
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 48px;
-    height: 48px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23404040"><path d="M19.376 12.001c0 .086-.006.17-.017.254l-1.983.496a2.002 2.002 0 00-1.143 2.895l.868 1.827a8.008 8.008 0 01-1.302 1.302l-1.826-.867a2 2 0 00-2.895 1.142l-.496 1.984a8.002 8.002 0 01-.254.017A8.002 8.002 0 014 12.001a8.002 8.002 0 0111.073-7.471l.496 1.983a2.002 2.002 0 002.895 1.143l1.827-.868a8.008 8.008 0 011.302 1.302l-.868 1.827a2.002 2.002 0 001.143 2.895l1.983.496c.01.083.016.168.016.253zm-9.375 2.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"/><path d="M8 5v14l11-7z"/></svg>'); /* Generic Video/Play Icon (Darker Gray) */
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.7;
-    z-index: 1; /* Below image, above background color */
-}
-
 .video-thumbnail img {
     position: absolute;
     top: 0;
@@ -197,10 +182,10 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.4s ease; /* Keep opacity transition, remove transform */
+    transition: opacity 0.4s ease;
     opacity: 0.85;
-    z-index: 2; /* Above placeholder icon */
-    background-color: transparent; /* Ensure img transparency doesn't hide placeholder if image itself is transparent */
+    z-index: 2;
+    background-color: transparent;
 }
 
 .video-item:hover .video-thumbnail img {
@@ -459,7 +444,6 @@ html {
 
 .about-image {
     flex: 0 0 300px;
-    max-width: 300px;
 }
 
 .about-image img {
@@ -551,8 +535,6 @@ html {
     justify-content: center;
     gap: 2rem;
     padding: 1rem 0;
-    max-width: 200px;
-    margin: 0 auto;
 }
 
 .social-link {
@@ -562,7 +544,6 @@ html {
     width: 24px;
     height: 24px;
     transition: opacity 0.3s ease;
-    flex-shrink: 0;
 }
 
 .social-link:hover {
