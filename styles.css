@@ -459,6 +459,7 @@ html {
 
 .about-image {
     flex: 0 0 300px;
+    max-width: 300px;
 }
 
 .about-image img {
@@ -550,6 +551,8 @@ html {
     justify-content: center;
     gap: 2rem;
     padding: 1rem 0;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 .social-link {
@@ -559,6 +562,7 @@ html {
     width: 24px;
     height: 24px;
     transition: opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
 .social-link:hover {
