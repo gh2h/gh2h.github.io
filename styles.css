@@ -444,16 +444,17 @@ html {
 
 /* About Section */
 .about-section {
-    padding: 4rem 0;
-    margin-top: 2rem;
+    padding: 3rem 0 2rem;
+    margin: 3rem 0;
+    border-top: 1px solid #222;
 }
 
 .about-content {
     max-width: 900px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-start;
-    gap: 3rem;
+    align-items: center;
+    gap: 4rem;
 }
 
 .about-image {
@@ -463,7 +464,9 @@ html {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 0;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
@@ -533,4 +536,37 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1rem;
     padding: 0.5rem 0;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 1.5rem 0;
+    margin-top: 0;
+    border-top: 1px solid #222;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+.social-icon {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
 } 

@@ -1,37 +1,51 @@
 // Portfolio data
 const portfolioItemsData = [
     { id: '1088401381', platform: 'vimeo', category: 'editing', title: 'Telia Christmas - Neighbours' },
-    { id: '1088411526', platform: 'vimeo', category: 'editing', title: 'Maxima' },
     { id: '1088401288', platform: 'vimeo', category: 'editing', title: 'Telia - 5g' },
+    { id: '1089622696', platform: 'vimeo', category: 'editing', title: 'Alita Brut Cuvee' },
     { id: '1088418560', platform: 'vimeo', category: 'editing', title: 'Telia - I love you' },
-    { id: '1088403330', platform: 'vimeo', category: 'editing', title: 'Maxima Christmas' },
+   
     { id: '1088405416', platform: 'vimeo', category: 'editing', title: 'Love' },
-    { id: '1088426586', platform: 'vimeo', category: 'editing', title: 'Altel Robots KZ' },
-    { id: '1088405286', platform: 'vimeo', category: 'editing', title: 'Gubernija Naked brown ale' },
+    { id: '1088403330', platform: 'vimeo', category: 'editing', title: 'Maxima Christmas' },
+    { id: '1089622990', platform: 'vimeo', category: 'editing', title: 'Credit 24 If you...' },
+    { id: '1089623472', platform: 'vimeo', category: 'editing', title: 'Tautiška Giesmė 2016' },
+   
+    //{ id: 'Ly1aNiiq0oU', platform: 'youtube', category: 'editing', title: 'TELE2 Lietuva Commercial' },
+    { id: '1088428260', platform: 'vimeo', category: 'editing', title: 'Starka' },
     { id: '1088402051', platform: 'vimeo', category: ['editing', 'color'], title: 'Amfora' },
+    { id: '1088405286', platform: 'vimeo', category: 'editing', title: 'Gubernija Naked brown ale' },
+    { id: '1089623385', platform: 'vimeo', category: 'editing', title: 'Maxima Meilutytė' },
+
+    { id: '1089622939', platform: 'vimeo', category: 'editing', title: 'Credit 24 Good Mood' },
     { id: '1088409265', platform: 'vimeo', category: 'editing', title: 'imperial_xii (1080p)' },
     { id: '1088401186', platform: 'vimeo', category: 'editing', title: 'Švyturys - Už mus, Lietuvius' },
-    { id: '932154899', platform: 'vimeo', category: ['editing', 'color'], title: 'Amouage - Extrait de Amou' },
-    // { id: '913318030', platform: 'vimeo', category: ['editing', 'color'], title: 'Super Manki 15s' },
-    { id: '336777947', platform: 'vimeo', category: ['editing', 'color'], title: 'Perskindol' },
+    { id: '1088428189', platform: 'vimeo', category: 'editing', title: 'Lithuanian vodka Unique' },
+
+    { id: '1089622859', platform: 'vimeo', category: 'editing', title: 'Credit24 Its best...' },
     { id: '1088409184', platform: 'vimeo', category: 'editing', title: 'Gritė Daugiau švaros' },
-    { id: '323261279', platform: 'vimeo', category: 'editing', title: 'Dlight' },
+    { id: '336777947', platform: 'vimeo', category: ['editing', 'color'], title: 'Perskindol' },
+    { id: '1089623033', platform: 'vimeo', category: 'editing', title: 'DLight (DC)' },
+    
     { id: '1088413507', platform: 'vimeo', category: 'editing', title: 'Telia Elevator' },
-    { id: 'YNmLAYfnD9s', platform: 'youtube', category: 'editing', title: 'Telia Lietuva Commercial' },
+    { id: '323261279', platform: 'vimeo', category: 'editing', title: 'Dlight' },
     { id: '148210012', platform: 'vimeo', category: 'editing', title: 'Rimi Image' },
     { id: '1dny7n_Z43E', platform: 'youtube', category: 'editing', title: 'Jazzu Music Video' },
+
+    { id: '1089622789', platform: 'vimeo', category: 'editing', title: 'Bosca' },
     { id: '148209772', platform: 'vimeo', category: 'editing', title: 'Maxima_Šeimos mėnuo' },
-    { id: '1088428260', platform: 'vimeo', category: 'editing', title: 'Starka' },
-    { id: '1088428189', platform: 'vimeo', category: 'editing', title: 'Lithuanian vodka Unique' },
-    { id: 'Ly1aNiiq0oU', platform: 'youtube', category: 'editing', title: 'TELE2 Lietuva Commercial' },
     { id: '134650086', platform: 'vimeo', category: 'editing', title: 'Maxima Bumsiai' },
-    { id: '148072833', platform: 'vimeo', category: 'editing', title: 'Tele2 All Calls' },
-    { id: '122527454', platform: 'vimeo', category: 'editing', title: 'Iki lojalumas' },
-    { id: '1088401595', platform: 'vimeo', category: 'editing', title: 'Obeliai Family' },
+    { id: 'YNmLAYfnD9s', platform: 'youtube', category: 'editing', title: 'Telia Lietuva Commercial' },
+
+    { id: '1089623252', platform: 'vimeo', category: 'editing', title: 'Maxima Kalėdos' },
     { id: '1088428098', platform: 'vimeo', category: ['editing', 'color'], title: 'Labas Mustang' },
-    { id: '148210418', platform: 'vimeo', category: 'editing', title: 'Ežys Kiss' },
-    { id: '148210664', platform: 'vimeo', category: 'editing', title: 'Scanorama' },
+    { id: '1088401595', platform: 'vimeo', category: 'editing', title: 'Obeliai Family' },
+    { id: '1088426586', platform: 'vimeo', category: 'editing', title: 'Altel Robots KZ' },
+
+   
+    { id: '148072833', platform: 'vimeo', category: 'editing', title: 'Tele2 All Calls' },
     { id: '103982274', platform: 'vimeo', category: 'editing', title: 'Omnitel 4G' },
+    { id: '148210418', platform: 'vimeo', category: 'editing', title: 'Ežys Kiss' },
+    //{ id: '148210664', platform: 'vimeo', category: 'editing', title: 'Scanorama' },
     { id: '103418528', platform: 'vimeo', category: 'editing', title: 'IKI Ūkis' }
 ];
 
@@ -87,7 +101,8 @@ class VideoPortfolio {
             if (itemData.platform === 'youtube') {
                 img.src = `https://img.youtube.com/vi/${itemData.id}/maxresdefault.jpg`;
             } else if (itemData.platform === 'vimeo') {
-                img.src = `https://vumbnail.com/${itemData.id}.jpg`;
+                const timestamp = new Date().getTime();
+                img.src = `https://vumbnail.com/${itemData.id}_640.jpg?cb=${timestamp}`;
             }
             img.alt = itemData.title || 'Video thumbnail';
             img.loading = 'lazy';
