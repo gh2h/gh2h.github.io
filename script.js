@@ -11,7 +11,7 @@ const portfolioItemsData = [
     { id: '1089623472', platform: 'vimeo', category: 'editing', title: 'Tautiška Giesmė 2016' },
    
     //{ id: 'Ly1aNiiq0oU', platform: 'youtube', category: 'editing', title: 'TELE2 Lietuva Commercial' },
-    { id: '1088428260', platform: 'vimeo', category: 'editing', title: 'Starka' },
+    { id: '772021581', platform: 'vimeo', category: 'editing', title: 'Swissquote' },
     { id: '1088402051', platform: 'vimeo', category: ['editing', 'color'], title: 'Amfora' },
     { id: '1088405286', platform: 'vimeo', category: 'editing', title: 'Gubernija Naked brown ale' },
     { id: '1089623385', platform: 'vimeo', category: 'editing', title: 'Maxima Meilutytė' },
@@ -35,6 +35,12 @@ const portfolioItemsData = [
     { id: '148209772', platform: 'vimeo', category: 'editing', title: 'Maxima_Šeimos mėnuo' },
     { id: '134650086', platform: 'vimeo', category: 'editing', title: 'Maxima Bumsiai' },
     { id: 'YNmLAYfnD9s', platform: 'youtube', category: 'editing', title: 'Telia Lietuva Commercial' },
+
+    { id: '1088428260', platform: 'vimeo', category: 'editing', title: 'Starka' },
+    { id: '1091108318', platform: 'vimeo', category: 'editing', title: 'Adrenalinas' },
+    { id: '1091108722', platform: 'vimeo', category: 'editing', title: 'Teo- Nieko nereikės atsisakyti' },
+    { id: '1091108262', platform: 'vimeo', category: 'editing', title: 'Maxima - Beata' },
+
 
     { id: '1089623252', platform: 'vimeo', category: 'editing', title: 'Maxima Kalėdos' },
     { id: '1088428098', platform: 'vimeo', category: ['editing', 'color'], title: 'Labas Mustang' },
